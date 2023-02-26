@@ -1,0 +1,4 @@
+Program is able to setup a bussinezz profile. The business is able to add movies and stock counts to their invetory
+as well as add  customers into their database. With customers and movies inserted, they are able to loan out items. 
+The system is also capaable of reading out customer histrory data.
+Program is able to take in text files with the data necessary to input the data, will not fail if given inprooply, but will return console cout errors.
