@@ -1,12 +1,12 @@
 #include <iostream>
 #include <vector> 
-#include <nodeData.h> 
-#include <customer.h> 
-#include <transaction.h> 
-#include <DVD.h> 
-#include <comedy.h> 
-#include <classic.h> 
-#include <drama.h> 
+#include "nodeData.h" 
+#include "customer.h" 
+#include "transaction.h" 
+#include "dvd.h" 
+#include "comedy.h" 
+#include "classic.h" 
+#include "drama.h" 
 
 using namespace std;
 
@@ -28,18 +28,20 @@ public:
     ~HashTable();
 
     //add an item to the table
-    addItem(int key, Customer value);
+    bool addItem(Customer value);
+
+    int findBucket(Customer value);
 
 
 private:
     //items in the table
     struct Item{
-        int* key;
         Customer* value;
-    }
+        Item *next;
+    };
 
-    Item* root;
+    Item **buckets;
+
     int size;
-    int count;
 
 };

@@ -1,6 +1,9 @@
+#ifndef BORROW_H
+#define BORROW_H
+
 #include <iostream>
 #include <vector> 
-#include <biz.h> 
+
 
 using namespace std;
 /*
@@ -15,9 +18,11 @@ public:
     //constructor
     Borrow();
 
-    borrowItem();
+    void borrowItem();
 
 private:
 
 
 };
+
+#endif

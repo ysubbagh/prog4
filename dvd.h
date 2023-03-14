@@ -1,6 +1,9 @@
+#ifndef DVD_H
+#define DVD_H
+
 #include <iostream>
 #include <vector> 
-#include <biz.h> 
+
 
 using namespace std;
 
@@ -15,6 +18,7 @@ class DVD{
     friend ostream &operator<<(ostream &out, const DVD &movie);
     friend class NodeData;
     friend class Transaction;
+    friend class Biz;
 
 public:
     //constructors
@@ -37,3 +41,5 @@ private:
     string direct;
 
 };
+
+#endif

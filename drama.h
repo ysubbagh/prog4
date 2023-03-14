@@ -1,7 +1,10 @@
+#ifndef DRAMA_H
+#define DRAMA_H
+
 #include <iostream>
 #include <vector> 
-#include <DVD.h> 
-#include <biz.h> 
+#include "dvd.h" 
+
 
 using namespace std;
 
@@ -23,3 +26,5 @@ private:
     string direct;
 
 };
+
+#endif

@@ -1,6 +1,9 @@
+#ifndef NODEDATA_H
+#define NODEDATA_H
+
 #include <iostream>
 #include <vector> 
-#include <biz.h> 
+#include "dvd.h"
 
 using namespace std;
 
@@ -23,3 +26,5 @@ private:
     DVD data;
 
 };
+
+#endif

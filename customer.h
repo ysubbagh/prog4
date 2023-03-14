@@ -1,6 +1,9 @@
+#ifndef CUSTOMER_H
+#define CUSTOMER_H
+
 #include <iostream>
 #include <vector> 
-#include <biz.h> 
+
 
 using namespace std;
 
@@ -37,3 +40,5 @@ private:
     string trans;
 
 };
+
+#endif

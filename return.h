@@ -1,6 +1,8 @@
+#ifndef RETURN_H
+#define RETURN_H
+
 #include <iostream>
-#include <vector> 
-#include <biz.h> 
+#include <vector>  
 
 using namespace std;
 /*
@@ -15,9 +17,11 @@ public:
     //constructor
     Return();
 
-    returnItem();
+    bool returnItem();
 
 private:
 
 
 };
+
+#endif

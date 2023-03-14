@@ -1,7 +1,10 @@
+#ifndef CLASSIC_H
+#define CLASSIC_H
+
 #include <iostream>
 #include <vector> 
-#include <DVD.h> 
-#include <biz.h> 
+#include "dvd.h" 
+
 
 using namespace std;
 
@@ -24,3 +27,5 @@ private:
     string star;
 
 };
+
+#endif

@@ -1,6 +1,9 @@
+#ifndef TRANSACTION_H
+#define TRANSACTION_H
+
 #include <iostream>
 #include <vector> 
-#include <biz.h> 
+#include "dvd.h" 
 
 using namespace std;
 /*
@@ -34,3 +37,5 @@ private:
     //show customer history transaction records
     string doHistory(int cust);
 };
+
+#endif

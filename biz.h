@@ -1,13 +1,16 @@
+#ifndef BIZ_H
+#define BIZ_H
+
 #include <iostream>
 #include <vector> 
-#include <nodeData.h> 
-#include <customer.h> 
-#include <transaction.h> 
-#include <DVD.h> 
-#include <comedy.h> 
-#include <classic.h> 
-#include <drama.h> 
-#include <hashTable.h> 
+#include "customer.h" 
+#include "transaction.h" 
+#include "dvd.h" 
+#include "comedy.h" 
+#include "classic.h" 
+#include "drama.h" 
+#include "hashTable.h" 
+#include "nodeData.h" 
 
 using namespace std;
 
@@ -45,3 +48,5 @@ private:
     HashTable table;
 
 };
+
+#endif
