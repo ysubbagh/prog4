@@ -15,6 +15,8 @@
 #include "borrow.h"
 #include "return.h"
 
+
+
 using namespace std;
 
 /*
@@ -22,6 +24,8 @@ using namespace std;
 */
 
 class Biz{
+
+    friend class Transaction;
 
 public:
     //constructor
@@ -53,6 +57,8 @@ private:
     HashTable custTable;
 
     //helper functions//
+
+    //help inset movie into the hash
     bool insertMovie(DVD *movie);
 
     //movie factory pattern

@@ -15,6 +15,7 @@ class Customer{
 
     friend class Biz;
     friend class HashTable;
+    friend class Transaction;
 
 public:
     //constructor
