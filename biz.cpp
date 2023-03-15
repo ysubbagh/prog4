@@ -3,7 +3,7 @@
 //constructor
 Biz:: Biz(){
     vector<DVD*> row;
-    for(int i = 0; i < 2; i++){
+    for(int i = 0; i < 3; i++){
         movieStock.push_back(row);
     }
 }
@@ -21,6 +21,7 @@ bool Biz:: buildMovie(string info){
         cout << "Improper movie genre entered" << endl;
         return false;
     }
+    insertMovie(movie);
     return true; // basecase
 }
 
@@ -29,6 +30,9 @@ bool Biz:: insertMovie(DVD *movie){
     int index = 0;
     if(movie -> genre == 'D') index = 1;
     if(movie -> genre == 'C') index = 2;
+    for(int i = 0; i < movieStock[index].size(); i++){
+        if(movieStock[index][i] -> name.compare(movie -> name) == 0) return false;
+    }
     movieStock[index].push_back(movie);
     return true; // base case
 }
@@ -40,6 +44,7 @@ bool Biz:: buildCust(string info){
     string f = info.substr(0, info.find(' '));
     info = info.substr(info.find(' '));
     Customer *person = new Customer(num, f, info);
+    cout << person -> getName() << "    " << person -> getId() << endl;
     custTable.addItem(person);
     return true; // basecase
 }
@@ -89,10 +94,13 @@ Transaction* Biz:: createTrans(char type, string info){
         }
         case 'I':{
             action = new Inventory();
+            printStock();
             break;
         }
         case 'H':{
             action = new History();
+            int cust = stoi(info.substr(info.find(' ')));
+            //custHist(cust);
             break;
         }
         default:{
@@ -103,3 +111,34 @@ Transaction* Biz:: createTrans(char type, string info){
     action -> doTrans(info);
     return action; // basecase
 } 
+
+void Biz:: printStock(){
+    for(int i = 0; i < movieStock.size(); i++){
+        cout << "---------------------------" << endl;
+        if(i == 0) cout << "Comedies: " << endl;
+        if(i == 1) cout << "Dramas: " << endl;
+        if(i == 2) cout << "Classics: " << endl;
+        cout << "   Genre   Media                       Title                       Director" << endl;
+        if(i == 2) cout << "Month    ";
+        cout << "Stock   Year" << endl;
+        for(int j = 0; j < movieStock[i].size(); j++){
+            cout << "   " << movieStock[i][j] -> genre << " D               " << movieStock[i][j] -> name << "      "  <<  movieStock[i][j] -> direct << endl;
+            if(i == 2) cout << movieStock[i][j] -> numDate << " ";
+            cout << movieStock[i][j] -> stock << "  ";
+            cout << movieStock[i][j] -> date << endl;
+            if(i == 2) cout << "                                        " << movieStock[i][j] -> star << endl;
+        }
+        cout << endl;
+    }
+}
+
+void Biz:: custHist(int num){
+    Customer* ppl = custTable.getCust(num);
+    if(ppl == nullptr) return;
+    cout << "History for " << ppl -> getName() << ":" << endl;
+    cout << ppl -> getTrans() << endl;
+}
+
+void Biz:: printT(){
+    custTable.printTable();
+}

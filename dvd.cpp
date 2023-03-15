@@ -12,6 +12,10 @@ int DVD:: getStock(){
     return stock;
 }
 
+string DVD:: getHistory(){
+    return history;
+}
+
 bool DVD:: setData(string info){
     cout << "Movie was not able to be added to system";
     return false;

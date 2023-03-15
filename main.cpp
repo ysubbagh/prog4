@@ -9,10 +9,10 @@ using namespace std;
 int main() {
    //create the shop
    Biz shop;
-
+   cout << "Setup Errors: " << endl;
    //load in the movies into the movie shop
    string line;
-   ifstream infile1("data4movies.txt");
+   ifstream infile1("data/data4movies.txt");
    if (!infile1) {
       cout << "File could not be opened." << endl;
       return 1;
@@ -26,7 +26,7 @@ int main() {
    }
 
    // load in customers into the moveie shop
-   ifstream infile2("data4customers.txt");
+   ifstream infile2("data/data4customers.txt");
    if (!infile2) {
       cout << "File could not be opened." << endl;
       return 1;
@@ -40,7 +40,7 @@ int main() {
    }
 
    //load in the commands for the transaction history
-   ifstream infile3("data4commands.txt");
+   ifstream infile3("data/data4commands.txt");
    if (!infile3) {
       cout << "File could not be opened." << endl;
       return 1;
@@ -52,7 +52,10 @@ int main() {
       getline(infile3, line);
       shop.transaction(line);
    }
+   
+   cout << "Output: " << endl;
 
    //print out output
-
+   //shop.printStock();
+   shop.printT();
 }

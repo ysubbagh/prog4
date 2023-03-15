@@ -34,12 +34,18 @@ public:
 
     int getStock();
 
+    string getHistory();
+
 private:
     char genre;
     int stock = 0; //set stock to 0 to start
     string name;
     string date;
     string direct;
+    string numDate;
+    string star;
+
+    string history;
 
 };
 

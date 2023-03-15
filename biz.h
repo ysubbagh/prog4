@@ -45,6 +45,11 @@ public:
     //process a transaction
     bool transaction(string info);
 
+    //print the current inventory
+    void printStock();
+
+    void printT();
+
 private:
     //movie storage0
     vector<vector<DVD*>> movieStock;
@@ -60,6 +65,14 @@ private:
 
     //transaction factory pattern
     Transaction* createTrans(char type, string info);
+    
+    void sortCom();
+
+    void sortDrama();
+
+    void sortClass();
+
+    void custHist(int num);
 
 };
 

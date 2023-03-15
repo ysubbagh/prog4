@@ -36,7 +36,7 @@ bool Comedy:: setData(string info){
                 break;
             }
             case 4:{
-                date = v[i];
+                date = v[i].substr(1);
                 break;
             }
             default:{

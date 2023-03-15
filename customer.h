@@ -25,7 +25,9 @@ public:
     string getName();
 
     //get the id of the cusotmer 
-    string getId();
+    int getId();
+
+    string getTrans();
 
 private:
     string fName;

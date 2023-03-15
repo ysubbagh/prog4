@@ -40,7 +40,7 @@ bool Classic:: setData(string info){
             case 4:{ //set star, releas date, and release date
                 star = v[i].substr(0, v[i].find(' '));
                 v[i] = v[i].substr(v[i].find(' ') + 1);
-                numDate = stoi( v[i].substr(0, v[i].find(' ')) );
+                numDate =  v[i].substr(0, v[i].find(' ')) ;
                 v[i] = v[i].substr(v[i].find(' ') + 1);
                 date = v[i];
                 break;

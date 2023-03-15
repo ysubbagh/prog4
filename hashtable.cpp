@@ -3,43 +3,63 @@
 //constructors
 HashTable:: HashTable(){
     size = 10; //base case
-    buckets = new Item*[size];
+    htable = new HashNode*[size];
 }
 HashTable:: HashTable(int size){
     this -> size = size;
-    buckets = new Item*[size];
+    htable = new HashNode*[size];
 }
 
 //destructor
 HashTable:: ~HashTable(){
-    Item *temp;
-    for(int i = 0; i < size; i++){
-        while(buckets[i] != nullptr){
-            temp = buckets[i];
-            buckets[i] = buckets[i] -> next;
-            delete temp -> data;
-            delete temp;
-        }
-    }
-    delete temp;
-    delete[] buckets;
+
+
 }
 
 //add an item to the table
 bool HashTable:: addItem(Customer *value){
-    int buck = findBucket(value);
-    Item *head = buckets[buck]; 
-    Item *person;
-    person -> data = value;
-    person -> next = nullptr; 
-    while(head != nullptr){
-        head = head -> next;
-    }
-    head = person;
-    return false; // base case
+    int key  = findBucket(value -> id);
+    HashNode* prev = nullptr;
+        HashNode* entry = htable[key];
+        while (entry != nullptr){
+            prev = entry;
+            entry = entry->next;
+        }
+        if (entry == nullptr){
+            entry = new HashNode(key, value);
+            if (prev == nullptr){
+                htable[key] = entry;
+            }else{
+                prev -> next = entry;
+            }
+        }else{
+            entry -> data = value;
+        }
+    return true; // base case
 }
 
 //algo to hash
-int HashTable:: findBucket(Customer *value){
-    return 7 % (value -> id / 7) + 3;
+int HashTable:: findBucket(int num){
+    return 7 % (num / 7);
+}
+
+Customer* HashTable:: getCust(int num){
+    HashNode* person = htable[findBucket(num)];
+    while(person -> data != nullptr && person -> next != nullptr){
+        if(person -> data -> id == num) return person -> data;
+        person = person -> next;
+    }
+    
+    return nullptr; //basecase
+}
+
+void HashTable:: printTable(){
+    for(int i = 0; i < size; i++){
+        HashNode* copy = htable[i];
+        while(copy != nullptr){
+            cout << htable[i] -> data -> getName() << "     "; 
+            copy = copy -> next;
+        }
+        cout << endl;
+    }
 }

@@ -24,8 +24,6 @@ public:
     virtual bool setData(string info);
 
 private:
-    string star;
-    int numDate;
 
 };
 

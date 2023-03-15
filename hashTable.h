@@ -28,20 +28,30 @@ public:
     //add an item to the table
     bool addItem(Customer *value);
 
+    Customer* getCust(int num);
+
 
 private:
     //items in the table
-    struct Item{
+    struct HashNode{
+        int key;
         Customer* data;
-        Item *next;
+        HashNode* next;
+        HashNode(int key, Customer* value){
+            this -> key = key;
+            this -> data = value;
+            this -> next = nullptr;
+        }
     };
 
-    Item **buckets;
+    HashNode **htable;
 
     int size;
 
     //helper functions//
     //find the correct bucket given the algorthim of the hash
-    int findBucket(Customer *value);
+    int findBucket(int num);
+
+    void printTable();
 
 };

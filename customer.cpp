@@ -12,10 +12,13 @@ string Customer:: getName(){
 }
 
 //get the id of the customer 
-string Customer:: getId(){
-    return id + "";
+int Customer:: getId(){
+    return id;
 }
 
+string Customer:: getTrans(){
+    return trans;
+}
 
 bool Customer:: addTrans(string info){
     trans = trans + "\n" + info;
