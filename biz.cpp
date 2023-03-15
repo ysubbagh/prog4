@@ -15,25 +15,13 @@ Biz:: ~Biz(){
 //functions//
 //load in new movie
 bool Biz:: buildMovie(string info){
-    DVD thisMovie(info);
-    if(thisMovie.genre == 'N' || thisMovie.name == "null" || thisMovie.direct == "null" || thisMovie.date == "null") return false; 
-    Node* hold = new Node();
-    if(thisMovie.genre == 'F') {
-        thisMovie = Comedy(thisMovie);
-    }
-    if(thisMovie.genre == 'D') {
-        thisMovie = Drama(thisMovie); 
-    }
-    if(thisMovie.genre == 'C') {
-        thisMovie = Classic(thisMovie, info);
-    } 
-    insertMovie(thisMovie);
+    DVD *movie = DVDFactory::createMovie(info[0], info);
     return true; // basecase
 }
 
 //insert the movie into the 
 bool Biz:: insertMovie(DVD movie){
-    
+
 }
 
 //build a customer profile

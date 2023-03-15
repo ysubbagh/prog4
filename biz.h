@@ -10,7 +10,7 @@
 #include "classic.h" 
 #include "drama.h" 
 #include "hashTable.h" 
-
+#include "movieFact.cpp"
 
 using namespace std;
 

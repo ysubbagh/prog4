@@ -21,6 +21,7 @@ class DVD{
     friend class NodeData;
     friend class Transaction;
     friend class Biz;
+    friend class DVDFactory;
 
 public:
     //constructors
