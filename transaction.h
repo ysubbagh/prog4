@@ -3,11 +3,17 @@
 
 #include <iostream>
 #include <vector> 
+#include "biz.fwd.h"
+#include "transaction.fwd.h"
+#include "hashtable.fwd.h"
+#include "dvd.fwd.h"
 
 using namespace std;
 /*
     transactions starts a transaction type
 */
+
+class HashTable;
 
 class Transaction{
 

@@ -2,21 +2,15 @@
 
 //constructor
 Biz:: Biz(){
-
+    vector<DVD*> row;
+    for(int i = 0; i < 2; i++){
+        movieStock.push_back(row);
+    }
 }
 
 //destructor
 Biz:: ~Biz(){
-    for(int i = 0; i < 2; i++){
-        Node *temp;
-        while(movieTable[i] != nullptr){
-            temp = movieTable[i];
-            movieTable[i] = movieTable[i] -> next;
-            delete temp -> data;
-            delete temp;
-        }
-    }
-    //delete[] movieTable;
+
 }
 
 //functions//
@@ -35,13 +29,7 @@ bool Biz:: insertMovie(DVD *movie){
     int index = 0;
     if(movie -> genre == 'D') index = 1;
     if(movie -> genre == 'C') index = 2;
-    Node *copy = movieTable[index];
-    while(copy != nullptr){
-        copy = copy -> next;
-    }
-    copy = new Node();
-    copy -> data = movie;
-    copy -> next = nullptr;
+    movieStock[index].push_back(movie);
     return true; // base case
 }
 

@@ -3,6 +3,10 @@
 
 #include <iostream>
 #include <vector> 
+#include "biz.fwd.h"
+#include "transaction.fwd.h"
+#include "hashtable.fwd.h"
+#include "dvd.fwd.h"
 #include "hashTable.h" 
 #include "customer.h" 
 #include "transaction.h" 
@@ -23,6 +27,8 @@ using namespace std;
 
 class Biz{
 
+    friend class Transaction;
+
 public:
     //constructor
     Biz();
@@ -40,14 +46,8 @@ public:
     bool transaction(string info);
 
 private:
-    //for the bs tree for movie ordering
-    struct Node{
-        DVD *data;
-        Node* next;
-    };
-
     //movie storage0
-    Node *movieTable[3];
+    vector<vector<DVD*>> movieStock;
 
     //customer storage
     HashTable custTable;

@@ -4,6 +4,8 @@
 #include <iostream>
 #include <vector> 
 #include "transaction.h"
+#include "transaction.fwd.h"
+#include "hashtable.fwd.h"
 
 
 using namespace std;
