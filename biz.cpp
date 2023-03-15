@@ -16,7 +16,7 @@ Biz:: ~Biz(){
             delete temp;
         }
     }
-    delete[] movieTable;
+    //delete[] movieTable;
 }
 
 //functions//
