@@ -1,9 +1,7 @@
 #include "transaction.h"
 
 //constructor
-Transaction:: Transaction(){
-
-}
+Transaction:: Transaction(){}
 
 bool Transaction:: doTrans(string info){
     cout << "Unable to complete a transaction" << endl;

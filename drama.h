@@ -9,7 +9,7 @@
 using namespace std;
 
 /*
-    drama movies store name of movie, release date, stock amount, and director
+    drama movies store name of movie, release date, stock amount, and director. Much inherited from DVD class
 */
 
 class Drama : public DVD{
@@ -19,6 +19,7 @@ public:
     Drama();
     Drama(string info);
 
+    //set data to the movie
     virtual bool setData(string info);
 
 

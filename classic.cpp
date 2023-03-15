@@ -2,9 +2,9 @@
 #include <bits/stdc++.h>
 
 //constructor
-Classic:: Classic(){
-
-
+Classic:: Classic(){}
+Classic:: Classic(string info){
+    this -> setData(info);
 }
 
 //set the data to the classic movie

@@ -10,7 +10,13 @@ Biz:: Biz(){
 
 //destructor
 Biz:: ~Biz(){
-
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < movieStock[i].size(); j++) {
+            delete movieStock[i][j];
+        }
+        movieStock[i].clear();
+    }
+    custTable.clearTable();
 }
 
 //functions//
@@ -44,7 +50,7 @@ bool Biz:: buildCust(string info){
     string f = info.substr(0, info.find(' '));
     info = info.substr(info.find(' '));
     Customer *person = new Customer(num, f, info);
-    cout << person -> getName() << "    " << person -> getId() << endl;
+    //cout << person -> getName() << "    " << person -> getId() << endl;
     custTable.addItem(person);
     return true; // basecase
 }
@@ -100,7 +106,7 @@ Transaction* Biz:: createTrans(char type, string info){
         case 'H':{
             action = new History();
             int cust = stoi(info.substr(info.find(' ')));
-            //custHist(cust);
+            custHist(cust);
             break;
         }
         default:{
@@ -112,6 +118,7 @@ Transaction* Biz:: createTrans(char type, string info){
     return action; // basecase
 } 
 
+//print out the currnet stock of the Biz
 void Biz:: printStock(){
     for(int i = 0; i < movieStock.size(); i++){
         cout << "---------------------------" << endl;
@@ -132,6 +139,7 @@ void Biz:: printStock(){
     }
 }
 
+//print out the history of a customer
 void Biz:: custHist(int num){
     Customer* ppl = custTable.getCust(num);
     if(ppl == nullptr) return;
@@ -139,6 +147,7 @@ void Biz:: custHist(int num){
     cout << ppl -> getTrans() << endl;
 }
 
+//testing print function to make sure hashtable is correct
 void Biz:: printT(){
     custTable.printTable();
 }

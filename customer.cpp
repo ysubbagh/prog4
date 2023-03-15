@@ -16,10 +16,12 @@ int Customer:: getId(){
     return id;
 }
 
+//return the 
 string Customer:: getTrans(){
     return trans;
 }
 
+//add a tranasction to the customers history
 bool Customer:: addTrans(string info){
     trans = trans + "\n" + info;
     return true; //base case

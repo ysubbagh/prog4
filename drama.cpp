@@ -1,10 +1,10 @@
 #include "drama.h"
 #include <bits/stdc++.h>
 
-//constructor
-Drama:: Drama(){
-
-
+//constructors
+Drama:: Drama(){}
+Drama:: Drama(string info){
+    this -> setData(info);
 }
 
 //set the data to the drama movie

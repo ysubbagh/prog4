@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector> 
+#include <cmath>
 #include "customer.h" 
 #include "biz.fwd.h"
 #include "transaction.fwd.h"
@@ -28,7 +29,11 @@ public:
     //add an item to the table
     bool addItem(Customer *value);
 
+    //return the custoemr given their id
     Customer* getCust(int num);
+
+    //clear the memory allocated to the table, helper function for destrucor in Biz
+    void clearTable(){}
 
 
 private:
@@ -44,14 +49,17 @@ private:
         }
     };
 
+    //the hashtable
     HashNode **htable;
 
+    //size of table
     int size;
 
     //helper functions//
     //find the correct bucket given the algorthim of the hash
     int findBucket(int num);
 
+    //help check the table
     void printTable();
 
 };

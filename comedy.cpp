@@ -1,9 +1,10 @@
 #include "comedy.h"
 #include <bits/stdc++.h>
 
-//constructor
-Comedy::Comedy(){
-
+//constructors
+Comedy::Comedy(){}
+Comedy:: Comedy(string info){
+    this -> setData(info);
 }
 
 
