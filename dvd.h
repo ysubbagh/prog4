@@ -3,7 +3,9 @@
 
 #include <iostream>
 #include <vector> 
-
+#include "comedy.h"
+#include "classic.h"
+#include "drama.h"
 
 using namespace std;
 
@@ -23,10 +25,7 @@ class DVD{
 public:
     //constructors
     DVD();
-    DVD(string name);
-    DVD(string name, int stock);
-    DVD(string name, char type);
-    DVD(string name, int stock, char type);
+    DVD(string info);
 
     //set the data of the movie
     bool setData(string info);
@@ -39,6 +38,9 @@ private:
     string name;
     string date;
     string direct;
+
+    //helper functions//
+
 
 };
 

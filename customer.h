@@ -19,6 +19,7 @@ class Customer{
 public:
     //constructor
     Customer();
+    Customer(string id, string f, string l);
 
     //get the name of the customer
     string getName();

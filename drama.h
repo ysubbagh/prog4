@@ -16,6 +16,7 @@ class Drama : public DVD{
 public:
     //constructors
     Drama();
+    Drama(DVD copy);
     Drama(string name, int stock, string date, string direct);
 
 

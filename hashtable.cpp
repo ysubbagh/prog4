@@ -17,6 +17,7 @@ HashTable:: ~HashTable(){
         while(buckets[i] != nullptr){
             temp = buckets[i];
             buckets[i] = buckets[i] -> next;
+            delete temp -> data;
             delete temp;
         }
     }
@@ -25,12 +26,20 @@ HashTable:: ~HashTable(){
 }
 
 //add an item to the table
-bool HashTable:: addItem(Customer value){
+bool HashTable:: addItem(Customer *value){
+    int buck = findBucket(value);
+    Item *head = buckets[buck]; 
+    Item *person;
+    person -> data = value;
+    person -> next = nullptr; 
+    while(head != nullptr){
+        head = head -> next;
+    }
+    head = person;
     return false; // base case
 }
 
-int HashTable:: findBucket(Customer value){
-    int x = 0;
-    
-    return x;
+//algo to hash
+int HashTable:: findBucket(Customer *value){
+    return 7 % (value -> id / 7) + 3;
 }

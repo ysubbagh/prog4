@@ -17,6 +17,7 @@ class Comedy : public DVD{
 public:
     //constructors
     Comedy();
+    Comedy(DVD copy);
     Comedy(string name, int stock, string date, string director);
 
 private:

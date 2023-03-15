@@ -1,6 +1,5 @@
 #include <iostream>
 #include <vector> 
-#include "nodeData.h" 
 #include "customer.h" 
 #include "transaction.h" 
 #include "dvd.h" 
@@ -28,20 +27,22 @@ public:
     ~HashTable();
 
     //add an item to the table
-    bool addItem(Customer value);
-
-    int findBucket(Customer value);
+    bool addItem(Customer *value);
 
 
 private:
     //items in the table
     struct Item{
-        Customer* value;
+        Customer* data;
         Item *next;
     };
 
     Item **buckets;
 
     int size;
+
+    //helper functions//
+    //find the correct bucket given the algorthim of the hash
+    int findBucket(Customer *value);
 
 };

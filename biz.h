@@ -10,7 +10,7 @@
 #include "classic.h" 
 #include "drama.h" 
 #include "hashTable.h" 
-#include "nodeData.h" 
+
 
 using namespace std;
 
@@ -24,6 +24,9 @@ public:
     //constructor
     Biz();
 
+    //destructor
+    ~Biz();
+
     //build a movie profile
     bool buildMovie(string info);
 
@@ -35,17 +38,23 @@ public:
 
 private:
     //for the bs tree for movie ordering
+    struct NodeData {
+        DVD data; 
+    };
     struct Node{
-        NodeData* data;
+        NodeData *data;
         Node* left;
         Node* right;
     };
 
-    //movies
-    Node* root;
+    //movie storage0
+    Node *movieRoot;
 
-    //customers
-    HashTable table;
+    //customer storage
+    HashTable custTable;
+
+    //helper functions//
+    bool insertMovie(DVD movie);
 
 };
 

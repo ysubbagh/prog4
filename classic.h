@@ -17,7 +17,8 @@ class Classic : public DVD{
 public:
     //constructors
     Classic();
-    Classic(string name, int stock, string date, string star);
+    Classic(string info);
+    Classic(DVD copy, string info);
 
 private:
     int stock = 0; //set stock to 0 to start
