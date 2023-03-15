@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <vector> 
+#include "nodeData.h"
 
 using namespace std;
 /*

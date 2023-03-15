@@ -1,4 +1,5 @@
 #include "transaction.h"
+#include "biz.h"
 
 //constructor
 Transaction:: Transaction(){

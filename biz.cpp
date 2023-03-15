@@ -59,6 +59,7 @@ bool Biz:: buildCust(string info){
 //process a transaction
 bool Biz:: transaction(string info){
     Transaction* doStuff = createTrans(info[0], info);
+    if(doStuff == nullptr) return false;
     return true; //base case
 }
 

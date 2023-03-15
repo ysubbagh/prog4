@@ -1,4 +1,5 @@
 #include "hashTable.h"
+#include "biz.cpp"
 
 //constructors
 HashTable:: HashTable(){
