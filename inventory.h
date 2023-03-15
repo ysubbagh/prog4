@@ -1,20 +1,21 @@
-#ifndef RETURN_H
-#define RETURN_H
+#ifndef INVENTORY_H
+#define INVENTORY_H
 
 #include <iostream>
-#include <vector>  
+#include <vector> 
 #include "transaction.h"
+
 
 using namespace std;
 /*
-    return an item
+    borrow an item
 */
 
-class Return : public Transaction{
+class Inventory : public Transaction{
 
 public:
     //constructor
-    Return();
+    Inventory();
 
     bool doTrans(string info);
 

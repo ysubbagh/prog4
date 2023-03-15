@@ -3,13 +3,17 @@
 
 #include <iostream>
 #include <vector> 
+#include "hashTable.h" 
 #include "customer.h" 
 #include "transaction.h" 
 #include "dvd.h" 
 #include "comedy.h" 
 #include "classic.h" 
 #include "drama.h" 
-#include "hashTable.h" 
+#include "history.h"
+#include "inventory.h"
+#include "borrow.h"
+#include "return.h"
 
 using namespace std;
 
@@ -37,26 +41,25 @@ public:
 
 private:
     //for the bs tree for movie ordering
-    struct NodeData {
-        DVD data; 
-    };
     struct Node{
-        NodeData *data;
-        Node* left;
-        Node* right;
+        DVD *data;
+        Node* next;
     };
 
     //movie storage0
-    Node *movieRoot;
+    Node *movieTable[3];
 
     //customer storage
     HashTable custTable;
 
     //helper functions//
-    bool insertMovie(DVD movie);
+    bool insertMovie(DVD *movie);
 
     //movie factory pattern
     DVD* createMovie(char type, string info);
+
+    //transaction factory pattern
+    Transaction* createTrans(char type, string info);
 
 };
 

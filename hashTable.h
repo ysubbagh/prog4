@@ -1,11 +1,6 @@
 #include <iostream>
 #include <vector> 
 #include "customer.h" 
-#include "transaction.h" 
-#include "dvd.h" 
-#include "comedy.h" 
-#include "classic.h" 
-#include "drama.h" 
 
 using namespace std;
 

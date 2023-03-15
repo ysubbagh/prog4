@@ -3,7 +3,6 @@
 
 #include <iostream>
 #include <vector> 
-#include "dvd.h" 
 
 using namespace std;
 /*
@@ -13,29 +12,20 @@ using namespace std;
 class Transaction{
 
     friend class Biz;
+    friend class History;
+    friend class Inventory;
+    friend class Return;
+    friend class Borrow;
 
 public:
     //constructor
     Transaction();
 
     //complete a transaction
-    bool doTrans();
-
-    //set data
-    bool setData();
+    virtual bool doTrans(string info);
 
 private:
-    //do a return transaction
-    bool doReturn(int cust, DVD item);
 
-    //do a borrow transaction
-    bool doBorrow(int cust, DVD item);
-
-    //show cust info
-    string doShow(int cust);
-    
-    //show customer history transaction records
-    string doHistory(int cust);
 };
 
 #endif

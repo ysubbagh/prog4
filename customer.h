@@ -27,18 +27,14 @@ public:
     //get the id of the cusotmer 
     string getId();
 
-    //retutn the string of the transaction history of customer
-    string getHistory();
-
-    //add a transaction under customer profilr and add to their history
-    bool addTrans();
-
 private:
     string fName;
     string lName;
     int id;
 
     string trans;
+
+    bool addTrans(string info);
 
 };
 

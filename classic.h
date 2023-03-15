@@ -14,6 +14,8 @@ using namespace std;
 
 class Classic : public DVD{
 
+    friend class Transaction;
+
 public:
     //constructors
     Classic();

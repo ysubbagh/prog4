@@ -16,7 +16,8 @@ string Customer:: getId(){
     return id + "";
 }
 
-//retutn the string of the transaction history of customer
-string Customer:: getHistory(){
 
+bool Customer:: addTrans(string info){
+    trans = trans + "\n" + info;
+    return true; //base case
 }

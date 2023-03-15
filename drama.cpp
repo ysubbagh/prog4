@@ -24,6 +24,7 @@ bool Drama:: setData(string info){
             }
             case 1:{
                 stock = stoi(v[i]);
+                if(stock < 0) stock = 0;
                 break;
             }
             case 2:{

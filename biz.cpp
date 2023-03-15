@@ -2,26 +2,47 @@
 
 //constructor
 Biz:: Biz(){
-    movieRoot -> data = nullptr;
-    movieRoot -> left = nullptr;
-    movieRoot -> right = nullptr; 
+
 }
 
-//desctrucot
+//destructor
 Biz:: ~Biz(){
-
+    for(int i = 0; i < 2; i++){
+        Node *temp;
+        while(movieTable[i] != nullptr){
+            temp = movieTable[i];
+            movieTable[i] = movieTable[i] -> next;
+            delete temp -> data;
+            delete temp;
+        }
+    }
+    delete[] movieTable;
 }
 
 //functions//
 //load in new movie
 bool Biz:: buildMovie(string info){
     DVD *movie = createMovie(info[0], info);
+    if(movie == nullptr) {
+        cout << "Improper movie genre entered" << endl;
+        return false;
+    }
     return true; // basecase
 }
 
 //insert the movie into the 
-bool Biz:: insertMovie(DVD movie){
-
+bool Biz:: insertMovie(DVD *movie){
+    int index = 0;
+    if(movie -> genre == 'D') index = 1;
+    if(movie -> genre == 'C') index = 2;
+    Node *copy = movieTable[index];
+    while(copy != nullptr){
+        copy = copy -> next;
+    }
+    copy = new Node();
+    copy -> data = movie;
+    copy -> next = nullptr;
+    return true; // base case
 }
 
 //build a customer profile
@@ -37,11 +58,11 @@ bool Biz:: buildCust(string info){
 
 //process a transaction
 bool Biz:: transaction(string info){
-
-
-    return true; // basecase
+    Transaction* doStuff = createTrans(info[0], info);
+    return true; //base case
 }
 
+//factory pattern to choose the correct movie type
 DVD* Biz:: createMovie(char type, string info){
     DVD *movie = nullptr;
     switch (type) {
@@ -58,10 +79,39 @@ DVD* Biz:: createMovie(char type, string info){
             break;
         }
         default:{
-            cout << "Improper movie genre type entered";
+            cout << "Improper movie genre type entered" << endl;;
             return nullptr;
         }
     }
     movie -> setData(info);
     return movie;
 }
+
+// factory design for the transactions
+Transaction* Biz:: createTrans(char type, string info){
+    Transaction *action = nullptr;
+    switch (type){
+        case 'B':{
+            action = new Borrow();
+            break;
+        }
+        case 'R':{
+            action = new Return();
+            break;
+        }
+        case 'I':{
+            action = new Inventory();
+            break;
+        }
+        case 'H':{
+            action = new History();
+            break;
+        }
+        default:{
+            cout << "Improper transaction action code entered" << endl;
+            return nullptr;
+        }
+    }
+    action -> doTrans(info);
+    return action; // basecase
+} 

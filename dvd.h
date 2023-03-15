@@ -15,7 +15,6 @@ class DVD{
 
     //print output
     friend ostream &operator<<(ostream &out, const DVD &movie);
-    friend class NodeData;
     friend class Transaction;
     friend class Biz;
     friend class Comedy;
@@ -37,9 +36,6 @@ private:
     string name;
     string date;
     string direct;
-
-    //helper functions//
-
 
 };
 

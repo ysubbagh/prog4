@@ -1,5 +1,5 @@
-#ifndef BORROW_H
-#define BORROW_H
+#ifndef HISTORY_H
+#define HISTORY_H
 
 #include <iostream>
 #include <vector> 
@@ -11,11 +11,11 @@ using namespace std;
     borrow an item
 */
 
-class Borrow : public Transaction{
+class History : public Transaction{
 
 public:
     //constructor
-    Borrow();
+    History();
 
     virtual bool doTrans(string info);
 

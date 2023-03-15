@@ -26,6 +26,7 @@ bool Classic:: setData(string info){
             }
             case 1:{ //set stock size
                 stock = stoi(v[i]);
+                if(stock < 0) stock = 0;
                 break;
             }
             case 2:{ //set director
