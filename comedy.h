@@ -17,14 +17,12 @@ class Comedy : public DVD{
 public:
     //constructors
     Comedy();
-    Comedy(DVD copy);
-    Comedy(string name, int stock, string date, string director);
+    Comedy(string info);
+
+    virtual bool setData(string info);
 
 private:
-    int stock = 0; //set stock to 0 to start
-    string name;
-    string date;
-    string direct;
+
 
 };
 

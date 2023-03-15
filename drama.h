@@ -16,15 +16,12 @@ class Drama : public DVD{
 public:
     //constructors
     Drama();
-    Drama(DVD copy);
-    Drama(string name, int stock, string date, string direct);
+    Drama(string info);
+
+    virtual bool setData(string info);
 
 
 private:
-    int stock = 0; //set stock to 0 to start
-    string name;
-    string date;
-    string direct;
 
 };
 

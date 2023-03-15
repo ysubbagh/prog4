@@ -3,9 +3,6 @@
 
 #include <iostream>
 #include <vector> 
-#include "comedy.h"
-#include "classic.h"
-#include "drama.h"
 
 using namespace std;
 
@@ -21,15 +18,16 @@ class DVD{
     friend class NodeData;
     friend class Transaction;
     friend class Biz;
-    friend class DVDFactory;
+    friend class Comedy;
+    friend class Drama;
+    friend class Classic;
 
 public:
     //constructors
     DVD();
-    DVD(string info);
 
     //set the data of the movie
-    bool setData(string info);
+    virtual bool setData(string info);
 
     int getStock();
 

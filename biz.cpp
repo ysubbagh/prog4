@@ -15,7 +15,7 @@ Biz:: ~Biz(){
 //functions//
 //load in new movie
 bool Biz:: buildMovie(string info){
-    DVD *movie = DVDFactory::createMovie(info[0], info);
+    DVD *movie = createMovie(info[0], info);
     return true; // basecase
 }
 
@@ -40,4 +40,28 @@ bool Biz:: transaction(string info){
 
 
     return true; // basecase
+}
+
+DVD* Biz:: createMovie(char type, string info){
+    DVD *movie = nullptr;
+    switch (type) {
+        case 'C':{
+            movie = new Classic();
+            break;
+        }
+        case 'D':{
+            movie = new Drama();
+            break;
+        }
+        case 'F':{
+            movie = new Comedy();
+            break;
+        }
+        default:{
+            cout << "Improper movie genre type entered";
+            return nullptr;
+        }
+    }
+    movie -> setData(info);
+    return movie;
 }

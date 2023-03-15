@@ -10,7 +10,6 @@
 #include "classic.h" 
 #include "drama.h" 
 #include "hashTable.h" 
-#include "movieFact.cpp"
 
 using namespace std;
 
@@ -55,6 +54,9 @@ private:
 
     //helper functions//
     bool insertMovie(DVD movie);
+
+    //movie factory pattern
+    DVD* createMovie(char type, string info);
 
 };
 
