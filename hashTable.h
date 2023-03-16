@@ -33,7 +33,7 @@ public:
     Customer* getCust(int num);
 
     //clear the memory allocated to the table, helper function for destrucor in Biz
-    void clearTable(){}
+    void clearTable();
 
 
 private:
