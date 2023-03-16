@@ -120,8 +120,6 @@ Transaction* Biz:: createTrans(char type, string info){
 
 //print out the currnet stock of the Biz
 void Biz:: printStock(){
-    sort(movieStock[0].begin(), movieStock[0].end(), compareTitles);
-    sort(movieStock[1].begin(), movieStock[1].end(), CompareDirectors);
     for(int i = 0; i < movieStock.size(); i++){
         cout << "---------------------------" << endl;
         if(i == 0) cout << "Comedies: " << endl;
@@ -153,14 +151,3 @@ void Biz:: custHist(int num){
 void Biz:: printT(){
     custTable.printTable();
 }
-
-//helper function for sorting the funny movies
-bool Biz::compareTitles(const DVD *a, const DVD *b) {
-    return a -> name < b -> name;
-}
-
-//helper function for sorting drama movies
-bool Biz:: CompareDirectors(const DVD *a, const DVD *b){
-    return a -> direct < b -> direct;
-}
-

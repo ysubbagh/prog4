@@ -19,7 +19,6 @@ public:
     //constructor
     Inventory();
 
-    //print out the shop invecntory
     bool doTrans(string info);
 
 private:

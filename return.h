@@ -16,7 +16,6 @@ public:
     //constructor
     Return();
 
-    //do the return
     bool doTrans(string info);
 
 private:

@@ -53,10 +53,9 @@ int main() {
       shop.transaction(line);
    }
    
-   //printing for testing//
-   
-   //cout << "Output: " << endl;
+   cout << "Output: " << endl;
+
+   //print out output
    //shop.printStock();
    //shop.printT();
-
 }

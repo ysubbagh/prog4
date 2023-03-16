@@ -17,7 +17,6 @@ public:
     //constructor
     History();
 
-    //print out the customers history
     virtual bool doTrans(string info);
 
 private:
