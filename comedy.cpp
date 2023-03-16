@@ -29,11 +29,11 @@ bool Comedy:: setData(string info){
                 break;
             }
             case 2:{
-                direct = v[i];
+                direct = v[i].substr(1);
                 break;
             }
             case 3:{
-                name = v[i];
+                name = v[i].substr(1);;
                 break;
             }
             case 4:{

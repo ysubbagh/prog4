@@ -58,4 +58,6 @@ int main() {
    //print out output
    //shop.printStock();
    //shop.printT();
+   shop.printErrors();
+   
 }

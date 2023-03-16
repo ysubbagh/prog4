@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <vector> 
+#include <algorithm>
 #include "biz.fwd.h"
 #include "transaction.fwd.h"
 #include "hashtable.fwd.h"
@@ -47,8 +48,11 @@ public:
 
     //print the current inventory
     void printStock();
-
+    //print hashtable, for testing
     void printT();
+
+    //print the error histry of the transactins
+    void printErrors();
 
 private:
     //movie storage0
@@ -56,6 +60,9 @@ private:
 
     //customer storage
     HashTable custTable;
+
+    //error history for transactios
+    string errorHist;
 
     //helper functions//
     bool insertMovie(DVD *movie);
@@ -65,14 +72,33 @@ private:
 
     //transaction factory pattern
     Transaction* createTrans(char type, string info);
-    
-    void sortCom();
 
-    void sortDrama();
-
-    void sortClass();
-
+    //print the history of a customer
     void custHist(int num);
+
+    //help sort comedies
+    static bool compareTitles(const DVD *a, const DVD *b);
+
+    //help sort teh drama
+    static bool CompareDirectors(const DVD *a, const DVD *b);
+
+    //add an error to the list
+    void addError(string info);
+
+    //complete a borrow transaction
+    bool doBorrow(string info);
+
+    //complete a return transaction
+    bool doReturn(string info);
+
+    //make sure the info passed is formatted correctly / has the correct data types
+    bool checkFormat(vector<string> info);
+
+    //parse the data into a vector for easier access
+    vector<string> parse(string info);
+
+    //find the dvd or return null
+    DVD* findMovie(char type, string info);
 
 };
 

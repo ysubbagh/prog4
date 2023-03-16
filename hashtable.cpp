@@ -56,11 +56,10 @@ int HashTable:: findBucket(int num){
 //return the customer pointer given their id number
 Customer* HashTable:: getCust(int num){
     HashNode* person = htable[findBucket(num)];
-    while(person -> data != nullptr && person -> next != nullptr){
+    while(person != nullptr){
         if(person -> data -> id == num) return person -> data;
         person = person -> next;
     }
-    
     return nullptr; //basecase
 }
 
