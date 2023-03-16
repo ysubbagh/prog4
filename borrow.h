@@ -17,6 +17,7 @@ public:
     //constructor
     Borrow();
 
+    //complete the borrow transaction
     virtual bool doTrans(string info);
 
 private:

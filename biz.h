@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <vector> 
+#include <algorithm>
 #include "biz.fwd.h"
 #include "transaction.fwd.h"
 #include "hashtable.fwd.h"
@@ -66,14 +67,14 @@ private:
     //transaction factory pattern
     Transaction* createTrans(char type, string info);
     
-    void sortCom();
-
-    void sortDrama();
-
-    void sortClass();
-
+    //print out the histroy of a customer
     void custHist(int num);
 
+    //help sort the comedies
+    bool compareTitles(const DVD *a, const DVD *b);
+
+    //help sort teh drama
+    bool CompareDirectors(const DVD *a, const DVD *b);
 };
 
 #endif

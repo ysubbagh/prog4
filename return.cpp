@@ -1,9 +1,9 @@
 #include "return.h"
 
-Return:: Return(){
+//constructor
+Return:: Return(){}
 
-}
-
+//do the return
 bool Return:: doTrans(string info){
     
     return true; //basecase
